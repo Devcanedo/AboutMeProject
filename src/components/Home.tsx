@@ -1,10 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
+import Haru from '../images/haru.png';
 
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitch } from "react-icons/fa";
 
 const Container = styled.div`
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.8);
+ position: fixed;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+`;
+
+const Wrapper = styled.div`
+ width: 800px;
+ height: 500px;
+ box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+ background: #fff;
+ color: #000;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ position: relative;
+ z-index: 10;
+ border-radius: 10px;
+`;
+
+const ModalImg = styled.img`
+ width: 100%;
+ height: 100%;
+ border-radius: 10px 0 0 10px;
+ background: #000;
+`;
+
+const ModalContent = styled.div`
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ line-height: 1.8;
+ color: #141414;
+
+ /*
+  button {
+    padding: 10px 24px;
+    background: #141414;
+    color: #fff;
+    border: none;
+  }
+ */
+`;
+
+const Pzao = styled.p`
+ margin-bottom: 1rem;
+`;
+
+/*const Container = styled.div`
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -12,14 +65,14 @@ const Container = styled.div`
  padding-top: 4em;
 
  gap: 10px 20px;
-`;
+`;*/
 
-const Box = styled.div`
+/*const Box = styled.div`
   background: linear-gradient(145deg, #e2e8ec, #fdfdfd);
   padding: 2em;
   box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #fdfdfd;
   border-radius: 10px;
-`;
+`;*/
 
 const Title = styled.h1`
  font-size: 20px;
@@ -73,6 +126,40 @@ const MediasSociais = styled.div`
 const Home = () => {
  return(
      <Container>
+       <Wrapper>
+       {/*} <ModalImg src={Haru} alt='photo' /> */}
+       <ModalContent>
+       <Title> Minhas Redes </Title>
+       <Pzao>Abaixo minhas redes sociais para contato</Pzao>
+
+       <BoxRedes>
+       <RedesSociais>
+         <FaGithub />
+       </RedesSociais>
+       <RedesSociais>
+         <FaInstagram />
+       </RedesSociais>
+       </BoxRedes>
+       <BoxRedes>
+       <MediasSociais>
+        <FaTwitch />
+       </MediasSociais>
+       <MediasSociais>
+        <FaLinkedin/>
+       </MediasSociais>
+       </BoxRedes>
+
+       <Button text="Sobre Mim" link="/about" />
+       </ModalContent>
+       </Wrapper>
+     </Container>
+ );
+}
+
+export default Home;
+
+/*
+     <Container>
        <Box>
        <Title> Minhas Redes </Title>
 
@@ -97,7 +184,4 @@ const Home = () => {
        <Button text="Sobre Mim" link="/about" />
        </Box>
      </Container>
- );
-}
-
-export default Home;
+*/
