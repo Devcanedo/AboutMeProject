@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
-import Haru from '../images/haru.png';
+import Logo from '../images/haru.jpg';
 
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitch } from "react-icons/fa";
+
 
 const Container = styled.div`
  width: 100%;
@@ -30,7 +31,7 @@ const Wrapper = styled.div`
 
 const ModalImg = styled.img`
  width: 100%;
- height: 100%;
+ height: 94%;
  border-radius: 10px 0 0 10px;
  background: #000;
 `;
@@ -42,40 +43,15 @@ const ModalContent = styled.div`
  align-items: center;
  line-height: 1.8;
  color: #141414;
-
- /*
-  button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-  }
- */
 `;
 
 const Pzao = styled.p`
  margin-bottom: 1rem;
 `;
 
-/*const Container = styled.div`
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- padding-top: 4em;
-
- gap: 10px 20px;
-`;*/
-
-/*const Box = styled.div`
-  background: linear-gradient(145deg, #e2e8ec, #fdfdfd);
-  padding: 2em;
-  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #fdfdfd;
-  border-radius: 10px;
-`;*/
-
 const Title = styled.h1`
  font-size: 20px;
+ text-decoration: underline;
 `;
 
 const BoxRedes = styled.div`
@@ -116,6 +92,10 @@ const MediasSociais = styled.div`
  background-color: linear-gradient(145deg, #e2e8ec, #fdfdfd);
  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #fdfdfd;
 
+ a{
+     text-decoration: none;
+ }
+
  &:hover {
    background-color: white;
    color: #019587;
@@ -127,25 +107,45 @@ const Home = () => {
  return(
      <Container>
        <Wrapper>
-       {/*} <ModalImg src={Haru} alt='photo' /> */}
+       <ModalImg src={Logo} alt='photo' />
        <ModalContent>
        <Title> Minhas Redes </Title>
        <Pzao>Abaixo minhas redes sociais para contato</Pzao>
 
        <BoxRedes>
+       
        <RedesSociais>
+         <a href='https://github.com/rafabcanedo' target='_blank'
+        rel='nooperner'
+        >
          <FaGithub />
+         </a>
        </RedesSociais>
+
        <RedesSociais>
+         <a href='https://www.instagram.com/canedodev/' target='_blank'
+         rel='nooperner'
+         >
          <FaInstagram />
+         </a>
        </RedesSociais>
+
        </BoxRedes>
+
        <BoxRedes>
        <MediasSociais>
+         <a href='https://www.twitch.tv/canedopriv' target='_blank'
+        rel='nooperner'
+        >
         <FaTwitch />
+        </a>
        </MediasSociais>
        <MediasSociais>
+         <a href='https://www.linkedin.com/in/rafael-canedo-4abaa8197/' target='_blank'
+        rel='nooperner'
+        >
         <FaLinkedin/>
+        </a>
        </MediasSociais>
        </BoxRedes>
 
@@ -157,31 +157,3 @@ const Home = () => {
 }
 
 export default Home;
-
-/*
-     <Container>
-       <Box>
-       <Title> Minhas Redes </Title>
-
-
-       <BoxRedes>
-       <RedesSociais>
-         <FaGithub />
-       </RedesSociais>
-       <RedesSociais>
-         <FaInstagram />
-       </RedesSociais>
-       </BoxRedes>
-       <BoxRedes>
-       <MediasSociais>
-        <FaTwitch />
-       </MediasSociais>
-       <MediasSociais>
-        <FaLinkedin/>
-       </MediasSociais>
-       </BoxRedes>
-
-       <Button text="Sobre Mim" link="/about" />
-       </Box>
-     </Container>
-*/
