@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from './Button';
+import Logo from '../images/haru.jpg';
 
 const Container = styled.div`
  width: 100%;
@@ -26,7 +28,7 @@ const Wrapper = styled.div`
 
 const ModalImg = styled.img`
  width: 100%;
- height: 94%;
+ height: 95%;
  border-radius: 10px 0 0 10px;
  background: #000;
 `;
@@ -43,6 +45,12 @@ const ModalContent = styled.div`
 
 const Title = styled.h1`
  font-size: 20px;
+ text-decoration: underline;
+`;
+
+const BoxText = styled.div`
+ display: flex;
+ justify-content: center;
 `;
 
 const Text = styled.h3`
@@ -51,15 +59,24 @@ const Text = styled.h3`
 
 const SobreMim = () => {
  return(
-     <div>
-         <Title> Sobre Mim </Title>
-         <Text>Sei la as vezes penso que sou na verdade sou tipo nois <br /> 
-               Como se nois fosse nois e pronto test vem de testar como<br /> 
-               noi testa sempre noi é sempre testado acho que já ta bom<br />
-               A historia é mais profunda do q se parece como criamos o todo<br />
-               O todo é criado por noi chama no xesquedeeele.
+     <Container>
+      <Wrapper>
+        <ModalImg src={Logo} alt='photo' />
+         <ModalContent>
+ 
+        <Title> Sobre Mim </Title>
+         
+         <Text>Hey, my name is Chris. I'm 20 years old and I'm developer <br />
+               When I children lived in California where i started study code <br />
+               and I loved It. My parents paid new courses for me. <br />
+               Today, i'm games developer at Empresa tal in Vancouver,Canadá.<br />
+               I develop with Unity and I publish my games o Steam. <br />
          </Text>
-     </div>
+
+         <Button text="My Steam" link="/" />
+         </ModalContent>
+      </Wrapper>
+     </Container>
  );
 };
 

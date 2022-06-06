@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
 const ModalImg = styled.img`
  width: 100%;
- height: 94%;
+ height: 95%;
  border-radius: 10px 0 0 10px;
  background: #000;
 `;
@@ -72,6 +72,10 @@ const RedesSociais = styled.div`
  background-color: linear-gradient(145deg, #e2e8ec, #fdfdfd);
  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #fdfdfd;
 
+ a {
+   color: inherit;
+ }
+
  &:hover {
    background-color: white;
    color: #019587;
@@ -93,7 +97,8 @@ const MediasSociais = styled.div`
  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #fdfdfd;
 
  a{
-     text-decoration: none;
+   color: inherit;
+   //text-decoration: none;
  }
 
  &:hover {
